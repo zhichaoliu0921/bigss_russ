@@ -13,6 +13,8 @@
 
   <depend>bigss_russ_description</depend>
 
+  <exec_depend>rclpy</exec_depend>
+  
   <test_depend>ament_lint_auto</test_depend>
 
   <export>

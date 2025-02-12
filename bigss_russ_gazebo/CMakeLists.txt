@@ -3,6 +3,9 @@ cmake_minimum_required(VERSION 3.5)
 # Following directive defines the project name.
 project(bigss_russ_gazebo)
 
+# Ensure we find Python
+find_package(ament_cmake REQUIRED)
+find_package(rclpy REQUIRED)
 
 # Following directives find required packages and load their configuration.
 # The 'set' directive defines a variable (e.g. 'GZ_PLUGIN_VER').
@@ -58,13 +61,23 @@ target_link_libraries(FullSystem PRIVATE
   ignition-gazebo${GZ_SIM_VER}::ignition-gazebo${GZ_SIM_VER})
 
 
-
 # Following 'install' directive ensures that the compiled libraries
 # of the 'BasicSystem' and 'FullSystem' targets will be copied
 # to the subfolder 'lib/ros_gz_example_gazebo' of the install directory.
 install(
   TARGETS BasicSystem FullSystem
   DESTINATION lib/${PROJECT_NAME}
+)
+
+# Install Python scripts
+install(PROGRAMS
+  src/test_trajectory.py
+  DESTINATION lib/${PROJECT_NAME}
+)
+
+install(
+  DIRECTORY models/
+  DESTINATION share/${PROJECT_NAME}/models
 )
 
 
@@ -76,6 +89,19 @@ install(
   DESTINATION share/${PROJECT_NAME}/worlds
 )
 
+
+install(
+  DIRECTORY config/
+  DESTINATION share/${PROJECT_NAME}/config
+)
+
+
+# Install project launch files
+install(
+  DIRECTORY
+    launch/
+  DESTINATION share/${PROJECT_NAME}/launch
+)
 
 # Following directives are used when testing.
 if(BUILD_TESTING)

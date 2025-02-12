@@ -32,6 +32,7 @@
 			</visual>
 			<self_collide>1</self_collide>
 		</link>
+
 		<joint name="shoulder_pan_joint" type="revolute">
 			<pose relative_to="base_link">0 0 0.1273 0 -0 0</pose>
 			<parent>base_link</parent>
@@ -52,6 +53,7 @@
 				</dynamics>
 			</axis>
 		</joint>
+
 		<link name="shoulder_link">
 			<pose relative_to="shoulder_pan_joint">0 0 0 0 -0 0</pose>
 			<inertial>
@@ -357,56 +359,6 @@
 			</collision>
 			<self_collide>1</self_collide>
 		</link>
-
-		<!-- <plugin filename="ignition-gazebo-joint-position-controller-system" name="ignition::gazebo::systems::JointPositionController">
-			<joint_name>shoulder_pan_joint</joint_name>
-			<p_gain>10000</p_gain>
-			<i_gain>100</i_gain>
-			<d_gain>500</d_gain>
-			<i_max>200.0</i_max>
-			<i_min>-200.0</i_min>
-		</plugin>
-		<plugin filename="ignition-gazebo-joint-position-controller-system" name="ignition::gazebo::systems::JointPositionController">
-			<joint_name>shoulder_lift_joint</joint_name>
-			<p_gain>50000</p_gain>
-			<i_gain>100</i_gain>
-			<d_gain>1000</d_gain>
-			<i_max>200.0</i_max>
-			<i_min>-200.0</i_min>
-		</plugin>
-		<plugin filename="ignition-gazebo-joint-position-controller-system" name="ignition::gazebo::systems::JointPositionController">
-			<joint_name>elbow_joint</joint_name>
-			<p_gain>50000.0</p_gain>
-			<i_gain>100</i_gain>
-			<d_gain>1000</d_gain>
-			<i_max>200</i_max>
-			<i_min>-200</i_min>
-		</plugin>
-		<plugin filename="ignition-gazebo-joint-position-controller-system" name="ignition::gazebo::systems::JointPositionController">
-			<joint_name>wrist_1_joint</joint_name>
-			<p_gain>100.0</p_gain>
-			<i_gain>50.0</i_gain>
-			<d_gain>10.0</d_gain>
-			<i_max>10.0</i_max>
-			<i_min>-10.0</i_min>
-		</plugin>
-		<plugin filename="ignition-gazebo-joint-position-controller-system" name="ignition::gazebo::systems::JointPositionController">
-			<joint_name>wrist_2_joint</joint_name>
-			<p_gain>75.0</p_gain>
-			<i_gain>10</i_gain>
-			<d_gain>5</d_gain>
-			<i_max>10.0</i_max>
-			<i_min>-10.0</i_min>
-		</plugin>
-		<plugin filename="ignition-gazebo-joint-position-controller-system" name="ignition::gazebo::systems::JointPositionController">
-			<joint_name>wrist_3_joint</joint_name>
-			<p_gain>25.0</p_gain>
-			<i_gain>10</i_gain>
-			<d_gain>0.1</d_gain>
-			<i_max>10.0</i_max>
-			<i_min>-10.0</i_min>
-		</plugin> -->
-
 	</model>
 </sdf>
 
