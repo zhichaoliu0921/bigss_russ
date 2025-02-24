@@ -20,7 +20,9 @@ setup(
     tests_require=['pytest'],
     entry_points={
         'console_scripts': [
-            'controll_node = bigss_russ_control.controll_node:main'
+            'controll_node = bigss_russ_control.controll_node:main',
+            'down_controll_node = bigss_russ_control.down_controll_node:main',
+            'getpointcloud = bigss_russ_control.getpointcloud:main'
         ],
     },
 )
